@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comments</title>
+</head>
+<body>
+    <h1>Comments</h1>
+    <form action="/comments/create" method="POST">
+        <textarea name="content" placeholder="Content" required></textarea>
+        <input type="text" name="author" placeholder="Author ID" required>
+        <input type="text" name="post" placeholder="Post ID" required>
+        <button type="submit">Create Comment</button>
+    </form>
+    <ul>
+        <% comments.forEach(comment => { %>
+            <li><%= comment.content %> by <%= comment.author ? comment.author.name : 'Unknown' %> on <%= comment.post ? comment.post.title : 'Unknown' %></li>
+        <% }) %>
+        
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>

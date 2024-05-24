@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <form action="/users/create" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Create User</button>
+    </form>
+    <ul>
+        <% users.forEach(user => { %>
+            <li><%= user.name %> - <%= user.email %></li>
+        <% }) %>
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <form action="/posts/create" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="content" placeholder="Content" required></textarea>
+        <input type="text" name="author" placeholder="Author ID" required>
+        <button type="submit">Create Post</button>
+    </form>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li><%= post.title %> by <%= post.author ? post.author.name : 'Unknown' %></li>
+        <% }) %>        
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
